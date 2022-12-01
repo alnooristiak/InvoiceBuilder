@@ -1,15 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-// import CreateBill from './screen/components/CreateBill';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CreateBill from './screen/components/CreateBill';
 import HomeScreen from './screen/components/HomeScreen';
 
 export default function App() {
+  
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      {/* <CreateBill /> */}
-      <HomeScreen />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator  initialRouteName="CreateBill">
+        <Stack.Screen name="CreateBill" component={CreateBill} options={{headerShown: false}} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

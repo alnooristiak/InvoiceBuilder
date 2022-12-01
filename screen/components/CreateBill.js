@@ -1,11 +1,13 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const CreateBill = () => {
+const CreateBill = ({navigation}) => {
   return (
     <View style={styles.conatainer}>
       <Image style={styles.logo} source={require('../../assets/logo.png')} />
-      <TouchableOpacity style={styles.mkBill}>
+      <TouchableOpacity 
+      onPress={() => navigation.navigate('HomeScreen')}
+      style={styles.mkBill}>
         <Text>Make a Bill</Text>
       </TouchableOpacity>
     </View>
