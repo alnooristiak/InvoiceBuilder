@@ -3,7 +3,7 @@ import React from 'react'
 
 const CreateBill = () => {
   return (
-    <View style={styles.billContainer}>
+    <View style={styles.conatainer}>
       <Image style={styles.logo} source={require('../../assets/logo.png')} />
       <TouchableOpacity style={styles.mkBill}>
         <Text>Make a Bill</Text>
@@ -15,10 +15,11 @@ const CreateBill = () => {
 export default CreateBill
 
 const styles = StyleSheet.create({
-    billContainer: {
-        justifyContent: 'center',
-        alignContent: 'center',
+    conatainer: {
         flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     logo: {
         width: 150,
